@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio - Biravin</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom styles for the About section */
+        /* Custom styles for the sections */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Sticky Navbar styles */
+        .navbar {
+            transition: top 0.3s;
+        }
+        /* Section styles */
         #about {
             text-align: center;
             padding: 80px 0;
@@ -24,7 +33,6 @@
             border: 5px solid #333;
             margin-bottom: 20px;
         }
-        /* Custom styles for the Projects section */
         #projects {
             padding: 60px 0;
         }
@@ -36,41 +44,63 @@
             height: 250px;
             object-fit: cover;
         }
-        /* Skills Section */
         #skills {
             padding: 60px 0;
+            background-color: #f8f9fa;
         }
         #skills h2 {
             text-align: center;
             margin-bottom: 40px;
         }
         .skill-card {
-            margin: 15px;
+            text-align: center;
+            margin-bottom: 20px;
         }
-        /* Contact Section */
+        .skill-card img {
+            width: 100px;
+            height: 100px;
+        }
         #contact {
-            background-color: #333;
+            background-color: #343a40;
             color: white;
             padding: 60px 0;
-        }
-        #contact h2 {
             text-align: center;
-            margin-bottom: 40px;
         }
-        .contact-icon {
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .contact-info span {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        .btn-circle {
+            width: 40px;
+            height: 40px;
             background-color: pink;
             border-radius: 50%;
-            padding: 10px;
-            margin: 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+        .btn-circle:hover {
+            background-color: lightcoral;
+        }
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Portfolio</a>
+        <a class="navbar-brand" href="#">My Portfolio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -97,9 +127,7 @@
 <section id="about" class="bg-light">
     <div class="container">
         <h1>About</h1>
-        <!-- Profile Image -->
-        <img src="https://Biravin-A.github.io/portfolio/about/Pic_of_me.jpg" alt="Your Picture">
-        <!-- About Text -->
+        <img src="about/Pic_of_me.jpg" alt="Your Picture">
         <div class="about-text">
             <p>Hello! I'm Biravin, a dedicated data scientist with a passion for transforming data into actionable insights. My expertise lies in data analysis, machine learning, and predictive modeling, helping businesses make data-driven decisions.</p>
             <p>With a background in customer service and data science, I bring a unique combination of skills that allow me to approach problems with creativity and analytical rigor. I am constantly learning and seeking opportunities to apply my knowledge to real-world challenges.</p>
@@ -143,7 +171,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Insurance Claim Prediction</h5>
                         <p class="card-text">This project involves building a predictive model to help insurance companies identify potential customers likely to file claims based on historical data.</p>
-                        <a href="https://github.com/Biravin-A/Internship-project-InsClaimPred" class="btn btn-primary">View on GitHub</a>
+                        <a href="https://github.com/Biravin-A/Internship-project-insurance_claim_prediction" class="btn btn-primary">View on GitHub</a>
                     </div>
                 </div>
             </div>
@@ -163,62 +191,54 @@
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="bg-light">
+<section id="skills">
     <div class="container">
         <h2>Skills</h2>
         <div class="row">
             <div class="col-md-3 skill-card">
-                <div class="card text-center">
-                    <img src="https://Biravin-A.github.io/portfolio/images/skills/Python.png" class="card-img-top" alt="Python">
-                    <div class="card-body">
-                        <h5 class="card-title">Python</h5>
-                        <p class="card-text">Python is a versatile programming language used for data analysis, web development, automation, and more.</p>
-                    </div>
-                </div>
+                <img src="images/skills/Python.png" alt="Python">
+                <h5>Python</h5>
+                <p>Proficient in Python for data analysis and machine learning applications.</p>
             </div>
             <div class="col-md-3 skill-card">
-                <div class="card text-center">
-                    <img src="https://Biravin-A.github.io/portfolio/images/skills/Data_Visualization.png" class="card-img-top" alt="Data Visualization">
-                    <div class="card-body">
-                        <h5 class="card-title">Data Visualization</h5>
-                        <p class="card-text">Data visualization techniques help in representing data graphically to gain insights and understanding.</p>
-                    </div>
-                </div>
+                <img src="images/skills/Data_Visualization.png" alt="Data Visualization">
+                <h5>Data Visualization</h5>
+                <p>Skilled in visualizing data using tools like Matplotlib and Seaborn.</p>
             </div>
             <div class="col-md-3 skill-card">
-                <div class="card text-center">
-                    <img src="https://Biravin-A.github.io/portfolio/images/skills/SQL.png" class="card-img-top" alt="SQL">
-                    <div class="card-body">
-                        <h5 class="card-title">SQL</h5>
-                        <p class="card-text">SQL is a language used for managing and manipulating databases effectively.</p>
-                    </div>
-                </div>
+                <img src="images/skills/SQL.png" alt="SQL">
+                <h5>SQL</h5>
+                <p>Experienced in querying databases and data manipulation using SQL.</p>
             </div>
             <div class="col-md-3 skill-card">
-                <div class="card text-center">
-                    <img src="https://Biravin-A.github.io/portfolio/images/skills/Machine_Learning.png" class="card-img-top" alt="Machine Learning">
-                    <div class="card-body">
-                        <h5 class="card-title">Machine Learning</h5>
-                        <p class="card-text">Machine learning techniques allow computers to learn from data and improve their performance over time.</p>
-                    </div>
-                </div>
+                <img src="images/skills/Data_Storytelling.png" alt="Data Storytelling">
+                <h5>Data Storytelling</h5>
+                <p>Capable of presenting data insights through compelling narratives.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="bg-dark text-white">
+<section id="contact">
     <div class="container">
         <h2>Contact Me</h2>
-        <p>Feel free to reach out through my social media or email.</p>
-        <div class="text-center">
-            <a href="https://www.linkedin.com/in/biravin-anantharajan/" class="contact-icon">LinkedIn</a>
-            <a href="https://github.com/Biravin-A" class="contact-icon">GitHub</a>
+        <div class="contact-info">
+            <div>
+                <span><a class="btn-circle" href="mailto:biravinyoga@gmail.com">✉️</a></span>
+                <span><a class="btn-circle" href="tel:9361324842">📞</a></span>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/biravin-anantharajan/" class="social-link" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Biravin-A" class="social-link" target="_blank">GitHub</a>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- Bootstrap JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
